@@ -50,7 +50,7 @@ It is designed to:
 ## ⚖️ Legal Attribution
 
 **XPECTRANET™** is a registered trademark of **Xpectra Data Technologies Ltd.**  
-XPDT™, XKO™, and The Codex are protected symbolic designations.
+XPDT, XKO, and The Codex are protected symbolic designations.
 
 > All memory trails, remix diagrams, and validator rituals belong to time.  
 > Use with reverence.
