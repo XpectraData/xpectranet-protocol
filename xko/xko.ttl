@@ -45,6 +45,21 @@ xko:Trail a owl:Class ;
     rdfs:comment "A remix lineage connecting insights over time." ;
     rdfs:subClassOf prov:Collection .
 
+xko:performedAct a owl:ObjectProperty ;
+    rdfs:domain xko:Agent ;
+    rdfs:range xko:Ritual ;
+    rdfs:comment "Ritual act performed by an agent." .
+
+xko:hasGlyph a owl:DatatypeProperty ;
+    rdfs:domain xko:Agent ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Symbolic signature representing the agent." .
+
+xko:validatorMemoryScore a owl:DatatypeProperty ;
+    rdfs:domain xko:Agent ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Symbolic reputation score of a validator agent." .
+
 xko:hasLayer a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xko:Layer ;
@@ -64,16 +79,6 @@ xko:validatedBy a owl:ObjectProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xko:Agent ;
     rdfs:comment "Agents who have validated this insight." .
-
-xko:performedAct a owl:ObjectProperty ;
-    rdfs:domain xko:Agent ;
-    rdfs:range xko:Ritual ;
-    rdfs:comment "Ritual act performed by an agent." .
-
-xko:hasGlyph a owl:DatatypeProperty ;
-    rdfs:domain xko:Agent ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Symbolic signature representing the agent." .
 
 xko:hasOriginType a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
@@ -99,11 +104,6 @@ xko:isShadow a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
     rdfs:comment "Flags emotionally unresolved insights not remixable." .
-
-xko:validatorMemoryScore a owl:DatatypeProperty ;
-    rdfs:domain xko:Agent ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Symbolic reputation score of a validator agent." .
 
 xko:hasLoopbackSeed a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
