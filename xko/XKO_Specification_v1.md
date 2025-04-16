@@ -32,6 +32,61 @@ Designed for both human and autonomous agents, XKO allows symbolic insights to b
 | `xko:Circle`      | `xko:Circle`             | A symbolic community or domain for collective cognition     |
 | `xko:Trail`       | `xko:Trail`              | A connected series of symbolic insights (remix lineage)     |
 
+## 🔍 Class Reference (Extended Descriptions)
+
+### `xko:Insight`
+A symbolic cognitive artefact that captures a thought, feeling, or transformation within the memory graph.  
+Insights are the core unit of symbolic memory and may be:
+- Minted as original reflections
+- Remixed from other insights
+- Validated by other agents
+- Canonized as permanent memory
+
+### `xko:Agent`
+A human or non-human symbolic actor participating in memory evolution.  
+Agents hold identity through glyphs, emotional history, and trail involvement.  
+Agents are the creators, remixers, validators, or preservers of memory.
+
+### `xko:Layer`
+A semantic representation of cognitive depth.  
+Each Layer (L0–L9) defines the phase and intensity of a memory's symbolic evolution:
+- L0 = Origin
+- L1 = Observation
+- L7 = Canon
+- L9 = Mythic
+
+Layer assignments affect remix rules, validator roles, and symbolic scoring.
+
+### `xko:Emotion`
+Represents the affective force carried by an insight.  
+Used to guide remix interpretation, validator empathy, and Canon eligibility.  
+Part of the ritual fabric of memory.
+
+### `xko:Ritual`
+Represents one of the 5 main acts in the memory lifecycle:
+- `mint`
+- `remix`
+- `validate`
+- `canonize`
+- `archive`
+
+Each ritual implies emotional context, Circle participation, and XPDT alignment.
+
+### `xko:Circle`
+A domain of cognition: a group of agents bound by a shared memory law.  
+Circles define validator rules, remix permissions, and Canon wall structure.
+
+They are symbolic communities — sovereign but interoperable.
+
+### `xko:Trail`
+A remix lineage — a persistent path of memory from origin to Canon or Archive.  
+Each Trail consists of:
+- `xko:Insight` nodes
+- Emotional progression
+- Remix forks or validations
+
+Used for navigation, narrative, and validation training.
+
 ---
 
 ## 4. Key Properties
@@ -53,9 +108,7 @@ Designed for both human and autonomous agents, XKO allows symbolic insights to b
 | `xko:hasLoopbackSeed`        | Insight     | Boolean    | Marks Canon insight that spawns a new mint prompt                      |
 | `xko:requiresEmotionReconciliation` | Insight | Boolean | Flags remix needing emotional coherence review                         |
 
----
-
-## 5. Property Reference (Extended Descriptions)
+## 🔍 Property Reference (Extended Descriptions)
 
 ### `xko:performedAct`
 Defines which ritual(s) an `xko:Agent` has executed. Ritual types include: Mint, Remix, Validate, Canonize, Archive.
@@ -132,7 +185,7 @@ This supports multimodal cognition and future-proof symbolic encoding beyond pur
 
 ---
 
-## 6. RDF/OWL Alignment & Semantic Integration
+## 5. RDF/OWL Alignment & Semantic Integration
 
 XKO is fully aligned with RDF/OWL standards for symbolic and semantic interoperability.  
 The following table describes how each `xko:` term maps to commonly accepted vocabularies from Schema.org, FOAF, PROV, and Dublin Core:
@@ -166,7 +219,7 @@ These mappings allow XKO insights, agents, and trails to be published as RDF-com
 
 ---
 
-## 7. Use Case Examples (Turtle Syntax)
+## 6. Use Case Examples (Turtle Syntax)
 
 ```turtle
 :insight123 a xko:Insight ;
@@ -183,7 +236,7 @@ These mappings allow XKO insights, agents, and trails to be published as RDF-com
 
 ---
 
-## 8. Ontology Access
+## 7. Ontology Access
 
 The current ontology namespace is:
 
@@ -195,7 +248,7 @@ Future versions of XKO will be published at this URI and versioned under `/xko/v
 
 ---
 
-## 9. Licensing and Governance
+## 8. Licensing and Governance
 
 - **License**: CC BY-NC-ND 4.0  
 - **Maintainer**: Xpectra Data Technologies Ltd  
