@@ -95,7 +95,7 @@ Used for navigation, narrative, and validation training.
 |------------------------------|-------------|------------|-------------------------------------------------------------------------|
 | `xko:performedAct`           | Agent       | Ritual     | Indicates the ritual act an agent has performed                        |
 | `xko:hasGlyph`               | Agent       | Glyph      | Links an agent to their evolving symbolic identity signature           |
-| `xko:ValidatorMemoryScore`   | Agent       | Decimal    | Tracks validator trust via remix yield, coherence, and canon alignment |
+| `xko:validatorMemoryScore`   | Agent       | Decimal    | Tracks validator trust via remix yield, coherence, and canon alignment |
 | `xko:hasLayer`               | Insight     | Layer      | Declares the cognitive layer of an insight                             |
 | `xko:emotion`                | Insight     | Emotion    | Declares the emotional vector of the insight                           |
 | `xko:remixOf`                | Insight     | Insight    | Links to a prior insight in a remix lineage                            |
@@ -116,7 +116,7 @@ Defines which ritual(s) an `xko:Agent` has executed. Ritual types include: Mint,
 ### `xko:hasGlyph`
 Connects an agent to their evolving symbolic identity. Glyphs can shift over time as memory trails deepen or remix roles change.
 
-### `xko:ValidatorMemoryScore`
+### `xko:validatorMemoryScore`
 Symbolic reputation system for validators. Calculated based on:
 - Remix yield of validated insights
 - Emotional coherence in decisions
@@ -201,7 +201,7 @@ The following table describes how each `xko:` term maps to commonly accepted voc
 | `xko:Trail`               | `Class`      | `prov:Collection`, `schema:Series`      | A connected sequence of insights (memory lineage)                          |
 | `xko:performedAct`        | `Property`   | `prov:wasAssociatedWith`, `schema:participant` | Ritual action performed by agent                              |
 | `xko:hasGlyph`            | `Property`   | `foaf:depiction`, `schema:identifier`   | Symbolic visual/semantic representation of identity                        |
-| `xko:ValidatorMemoryScore`| `Datatype`   | `xsd:decimal`                           | Validator reputation metric                                                |
+| `xko:validatorMemoryScore`| `Datatype`   | `xsd:decimal`                           | Validator reputation metric                                                |
 | `xko:hasLayer`            | `Property`   | `schema:about`, `skos:broader`          | Declares cognitive layer of an insight                                      |
 | `xko:emotion`             | `Property`   | `schema:emotion`                        | Tags emotional context                                                      |
 | `xko:remixOf`             | `Property`   | `prov:wasDerivedFrom`, `dcterms:relation` | Links to original insight being remixed                                  |
@@ -228,7 +228,7 @@ These mappings allow XKO insights, agents, and trails to be published as RDF-com
     xko:remixOf :insight101 ;
     xko:validatedBy :agentA, :agentB ;
     xko:hasGlyph :glyphOfAgentA ;
-    xko:ValidatorMemoryScore "0.82"^^xsd:decimal ;
+    xko:validatorMemoryScore "0.82"^^xsd:decimal ;
     xko:isShadow false ;
     xko:hasLoopbackSeed true ;
     dcterms:created "2025-04-10T12:00:00Z"^^xsd:dateTime .
