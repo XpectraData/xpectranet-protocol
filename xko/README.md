@@ -28,7 +28,7 @@ This ontology defines the core structures for:
 ## 🌐 Namespace
 
 ```
-https://xpectranet.org/xko#
+https://xko.xpectranet.org/#
 ```
 
 Each concept and property in XKO resolves from this base URI.
