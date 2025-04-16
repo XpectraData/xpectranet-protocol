@@ -100,7 +100,7 @@ xko:isShadow a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     rdfs:comment "Flags emotionally unresolved insights not remixable." .
 
-xko:ValidatorMemoryScore a owl:DatatypeProperty ;
+xko:validatorMemoryScore a owl:DatatypeProperty ;
     rdfs:domain xko:Agent ;
     rdfs:range xsd:decimal ;
     rdfs:comment "Symbolic reputation score of a validator agent." .
