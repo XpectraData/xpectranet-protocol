@@ -1,4 +1,3 @@
-
 @prefix xko: <https://xko.xpectranet.org/#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,6 +8,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+### Core Symbolic Classes
 
 xko:Insight a owl:Class ;
     rdfs:label "Insight" ;
@@ -44,6 +45,8 @@ xko:Trail a owl:Class ;
     rdfs:label "Trail" ;
     rdfs:comment "A remix lineage connecting insights over time." ;
     rdfs:subClassOf prov:Collection .
+
+### Core Properties
 
 xko:performedAct a owl:ObjectProperty ;
     rdfs:domain xko:Agent ;
@@ -83,7 +86,7 @@ xko:validatedBy a owl:ObjectProperty ;
 xko:hasOriginType a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:string ;
-    rdfs:comment "Declares if the insight is from a human, agent, mythic, or translation." .
+    rdfs:comment "Declares whether the insight is of human, agentic, mythic, or translated origin." .
 
 xko:hasRemixLineage a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
@@ -93,29 +96,64 @@ xko:hasRemixLineage a owl:DatatypeProperty ;
 xko:isCanonical a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
-    rdfs:comment "Whether the insight has been sealed into the Canon Wall." .
+    rdfs:comment "True if the insight has been finalized into the Canon Wall." .
 
 xko:isArchived a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
-    rdfs:comment "Marks an insight as transitioned to symbolic rest." .
+    rdfs:comment "Marks the insight as no longer active — symbolic rest." .
 
 xko:isShadow a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
-    rdfs:comment "Flags emotionally unresolved insights not remixable." .
+    rdfs:comment "Flags emotionally unresolved insights that are not remixable." .
 
 xko:hasLoopbackSeed a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
-    rdfs:comment "Indicates the insight seeds a follow-up Mint." .
+    rdfs:comment "Indicates the insight is likely to trigger a follow-up minting event." .
 
 xko:requiresEmotionReconciliation a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:boolean ;
-    rdfs:comment "Flags remix that may need emotional coherence review." .
+    rdfs:comment "Flags remix paths that may require emotional coherence review." .
 
 xko:hasFormType a owl:DatatypeProperty ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:string ;
-    rdfs:comment "Form of the insight: text, image, audio, gesture." .
+    rdfs:comment "Form of the insight content: text, image, audio, gesture, etc." .
+
+### Cognitive State Extension
+
+xko:QuantumConsciousness a owl:Class ;
+    rdfs:label "Quantum Consciousness" ;
+    rdfs:comment """
+        A symbolic meta-Insight that reconstructs an agent’s cognitive state from a trail of xko:Insight memory blocks.
+        It encodes the dominant emotion, layer histogram, intent path, canonical reference, attentional focus, and drift score.
+        Used for memory resumption, cognitive continuity, and ritual prompt injection.
+    """ ;
+    rdfs:subClassOf xko:Insight .
+
+xko:layerHistogram a owl:DatatypeProperty ;
+    rdfs:domain xko:QuantumConsciousness ;
+    rdfs:range xsd:string ;
+    rdfs:label "Layer Histogram" ;
+    rdfs:comment "JSON-encoded map of how often each xko:hasLayer was present across the memory trail." .
+
+xko:intentPath a owl:DatatypeProperty ;
+    rdfs:domain xko:QuantumConsciousness ;
+    rdfs:range xsd:string ;
+    rdfs:label "Intent Path" ;
+    rdfs:comment "Serialized list of intents that guided the agent's cognition across the trail." .
+
+xko:focusOf a owl:DatatypeProperty ;
+    rdfs:domain xko:QuantumConsciousness ;
+    rdfs:range xsd:string ;
+    rdfs:label "Focus of Attention" ;
+    rdfs:comment "Field, topic, or entity that held primary cognitive attention across the memory trace." .
+
+xko:drift a owl:DatatypeProperty ;
+    rdfs:domain xko:QuantumConsciousness ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Symbolic Drift" ;
+    rdfs:comment "A normalized score representing time or emotion-based divergence from the canonical anchor." .
