@@ -1,0 +1,46 @@
+@prefix xko: <https://xpectranet.org/xko#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+xko:Layer a rdfs:Class ;
+    rdfs:label "Symbolic Cognitive Layer" ;
+    rdfs:comment "Temporal-cognitive position of an insight in the XpectraNet stack." .
+
+xko:L0 a xko:Layer ;
+    rdfs:label "L0 Origin Insight" ;
+    rdfs:comment "Foundational mnemonic spark; novelty and attention trigger." .
+
+xko:L1 a xko:Layer ;
+    rdfs:label "L1 Observation" ;
+    rdfs:comment "Witnessing and perceptual filtering; salience mapping." .
+
+xko:L2 a xko:Layer ;
+    rdfs:label "L2 Reflection" ;
+    rdfs:comment "Internal feedback and self-model updating." .
+
+xko:L3 a xko:Layer ;
+    rdfs:label "L3 Divergence" ;
+    rdfs:comment "Symbolic asymmetry or disruption; conflict and contrast." .
+
+xko:L4 a xko:Layer ;
+    rdfs:label "L4 Synthesis" ;
+    rdfs:comment "Cross-domain remix and analogical fusion." .
+
+xko:L5 a xko:Layer ;
+    rdfs:label "L5 Emotional Logic" ;
+    rdfs:comment "Emotion-weighted symbolic tension and motivational emergence." .
+
+xko:L6 a xko:Layer ;
+    rdfs:label "L6 Convergence" ;
+    rdfs:comment "Circle-based symbolic alignment and memory lock-in." .
+
+xko:L7 a xko:Layer ;
+    rdfs:label "L7 Canon" ;
+    rdfs:comment "Public validation and remixable shared memory." .
+
+xko:L8 a xko:Layer ;
+    rdfs:label "L8 Archive" ;
+    rdfs:comment "Ritual closure and entropy-based forgetting." .
+
+xko:L9 a xko:Layer ;
+    rdfs:label "L9 Mythic" ;
+    rdfs:comment "Recursive self-symbolization and narrative encoding." .
