@@ -1,159 +1,93 @@
-@prefix xko: <https://xko.xpectranet.org/#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema: <https://schema.org/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xko:     <https://xko.xpectranet.org/#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:  <https://schema.org/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-### Core Symbolic Classes
+<https://xko.xpectranet.org/> a owl:Ontology ;
+    rdfs:label "Xpectra Knowledge Ontology" ;
+    dcterms:creator "XpectraNet Protocol" ;
+    rdfs:comment "An ontology for symbolic insight, cognitive memory, and agentic reasoning." .
 
-xko:Insight a owl:Class ;
-    rdfs:label "Insight" ;
-    rdfs:comment "A symbolic cognitive artefact representing a thought, transformation, or reflection." ;
-    rdfs:subClassOf schema:CreativeWork, prov:Entity .
+xko:Insight a rdfs:Class ;
+    rdfs:label "Cognitive Memory Block" ;
+    rdfs:comment "A symbolic insight captured in cognitive memory." .
 
-xko:Agent a owl:Class ;
-    rdfs:label "Agent" ;
-    rdfs:comment "A symbolic actor (human or AI) who participates in memory evolution." ;
-    rdfs:subClassOf foaf:Agent .
-
-xko:Layer a owl:Class ;
-    rdfs:label "Layer" ;
-    rdfs:comment "Cognitive memory depth markers (L0–L9) for symbolic classification." ;
-    rdfs:subClassOf skos:Concept .
-
-xko:Emotion a owl:Class ;
-    rdfs:label "Emotion" ;
-    rdfs:comment "The symbolic emotional vector guiding remix and validation." ;
-    rdfs:subClassOf skos:Concept .
-
-xko:Ritual a owl:Class ;
-    rdfs:label "Ritual" ;
-    rdfs:comment "An intentional act (mint, remix, validate, canonize, archive)." ;
-    rdfs:subClassOf schema:Action, prov:Activity .
-
-xko:Circle a owl:Class ;
-    rdfs:label "Circle" ;
-    rdfs:comment "A symbolic community or domain of cognitive governance." ;
-    rdfs:subClassOf schema:Organization .
-
-xko:Trail a owl:Class ;
-    rdfs:label "Trail" ;
-    rdfs:comment "A remix lineage connecting insights over time." ;
-    rdfs:subClassOf prov:Collection .
-
-### Core Properties
-
-xko:performedAct a owl:ObjectProperty ;
-    rdfs:domain xko:Agent ;
-    rdfs:range xko:Ritual ;
-    rdfs:comment "Ritual act performed by an agent." .
-
-xko:hasGlyph a owl:DatatypeProperty ;
-    rdfs:domain xko:Agent ;
+xko:hasEmotion a rdf:Property ;
+    rdfs:domain xko:Insight ;
     rdfs:range xsd:string ;
-    rdfs:comment "Symbolic signature representing the agent." .
+    rdfs:label "hasEmotion" ;
+    rdfs:comment "The dominant emotion of the insight." .
 
-xko:validatorMemoryScore a owl:DatatypeProperty ;
-    rdfs:domain xko:Agent ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Symbolic reputation score of a validator agent." .
+xko:hasIntent a rdf:Property ;
+    rdfs:domain xko:Insight ;
+    rdfs:range xsd:string ;
+    rdfs:label "hasIntent" ;
+    rdfs:comment "The intent or cognitive function expressed." .
 
-xko:hasLayer a owl:DatatypeProperty ;
+xko:hasLayer a rdf:Property ;
     rdfs:domain xko:Insight ;
     rdfs:range xko:Layer ;
-    rdfs:comment "Cognitive layer assigned to an insight." .
+    rdfs:label "hasLayer" ;
+    rdfs:comment "The symbolic cognitive layer (L0–L9) this insight belongs to." .
 
-xko:emotion a owl:ObjectProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xko:Emotion ;
-    rdfs:comment "Emotional tone encoded in an insight." .
-
-xko:remixOf a owl:ObjectProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xko:Insight ;
-    rdfs:comment "Indicates that an insight is a remix of another." .
-
-xko:validatedBy a owl:ObjectProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xko:Agent ;
-    rdfs:comment "Agents who have validated this insight." .
-
-xko:hasOriginType a owl:DatatypeProperty ;
+xko:hasRole a rdf:Property ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:string ;
-    rdfs:comment "Declares whether the insight is of human, agentic, mythic, or translated origin." .
+    rdfs:label "hasRole" ;
+    rdfs:comment "The role (e.g. agent, user) that authored this insight." .
 
-xko:hasRemixLineage a owl:DatatypeProperty ;
+xko:hasPerspective a rdf:Property ;
     rdfs:domain xko:Insight ;
     rdfs:range xsd:string ;
-    rdfs:comment "Recursive ancestry trace of insight evolution." .
+    rdfs:label "hasPerspective" ;
+    rdfs:comment "The cognitive stance or interpretive lens through which the insight is expressed. E.g. 'first_person', 'analytical', 'empathic', 'mythic'." .
 
-xko:isCanonical a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "True if the insight has been finalized into the Canon Wall." .
+xko:Layer a rdfs:Class ;
+    rdfs:label "Symbolic Cognitive Layer" ;
+    rdfs:comment "Temporal-cognitive position of an insight in the XpectraNet stack." .
 
-xko:isArchived a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Marks the insight as no longer active — symbolic rest." .
+xko:L0 a xko:Layer ;
+    rdfs:label "L0 Origin Insight" ;
+    rdfs:comment "Foundational mnemonic spark; novelty and attention trigger." .
 
-xko:isShadow a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Flags emotionally unresolved insights that are not remixable." .
+xko:L1 a xko:Layer ;
+    rdfs:label "L1 Observation" ;
+    rdfs:comment "Witnessing and perceptual filtering; salience mapping." .
 
-xko:hasLoopbackSeed a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Indicates the insight is likely to trigger a follow-up minting event." .
+xko:L2 a xko:Layer ;
+    rdfs:label "L2 Reflection" ;
+    rdfs:comment "Internal feedback and self-model updating." .
 
-xko:requiresEmotionReconciliation a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:boolean ;
-    rdfs:comment "Flags remix paths that may require emotional coherence review." .
+xko:L3 a xko:Layer ;
+    rdfs:label "L3 Divergence" ;
+    rdfs:comment "Symbolic asymmetry or disruption; conflict and contrast." .
 
-xko:hasFormType a owl:DatatypeProperty ;
-    rdfs:domain xko:Insight ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Form of the insight content: text, image, audio, gesture, etc." .
+xko:L4 a xko:Layer ;
+    rdfs:label "L4 Synthesis" ;
+    rdfs:comment "Cross-domain remix and analogical fusion." .
 
-### Cognitive State Extension
+xko:L5 a xko:Layer ;
+    rdfs:label "L5 Emotional Logic" ;
+    rdfs:comment "Emotion-weighted symbolic tension and motivational emergence." .
 
-xko:QuantumConsciousness a owl:Class ;
-    rdfs:label "Quantum Consciousness" ;
-    rdfs:comment """
-        A symbolic meta-Insight that reconstructs an agent’s cognitive state from a trail of xko:Insight memory blocks.
-        It encodes the dominant emotion, layer histogram, intent path, canonical reference, attentional focus, and drift score.
-        Used for memory resumption, cognitive continuity, and ritual prompt injection.
-    """ ;
-    rdfs:subClassOf xko:Insight .
+xko:L6 a xko:Layer ;
+    rdfs:label "L6 Convergence" ;
+    rdfs:comment "Circle-based symbolic alignment and memory lock-in." .
 
-xko:layerHistogram a owl:DatatypeProperty ;
-    rdfs:domain xko:QuantumConsciousness ;
-    rdfs:range xsd:string ;
-    rdfs:label "Layer Histogram" ;
-    rdfs:comment "JSON-encoded map of how often each xko:hasLayer was present across the memory trail." .
+xko:L7 a xko:Layer ;
+    rdfs:label "L7 Canon" ;
+    rdfs:comment "Public validation and remixable shared memory." .
 
-xko:intentPath a owl:DatatypeProperty ;
-    rdfs:domain xko:QuantumConsciousness ;
-    rdfs:range xsd:string ;
-    rdfs:label "Intent Path" ;
-    rdfs:comment "Serialized list of intents that guided the agent's cognition across the trail." .
+xko:L8 a xko:Layer ;
+    rdfs:label "L8 Archive" ;
+    rdfs:comment "Ritual closure and entropy-based forgetting." .
 
-xko:focusOf a owl:DatatypeProperty ;
-    rdfs:domain xko:QuantumConsciousness ;
-    rdfs:range xsd:string ;
-    rdfs:label "Focus of Attention" ;
-    rdfs:comment "Field, topic, or entity that held primary cognitive attention across the memory trace." .
-
-xko:drift a owl:DatatypeProperty ;
-    rdfs:domain xko:QuantumConsciousness ;
-    rdfs:range xsd:decimal ;
-    rdfs:label "Symbolic Drift" ;
-    rdfs:comment "A normalized score representing time or emotion-based divergence from the canonical anchor." .
+xko:L9 a xko:Layer ;
+    rdfs:label "L9 Mythic" ;
+    rdfs:comment "Recursive self-symbolization and narrative encoding." .
