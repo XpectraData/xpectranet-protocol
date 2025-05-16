@@ -1,81 +1,345 @@
-{
-  "@context": {
-    "xko": "https://xko.xpectranet.org/#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "schema": "https://schema.org/",
-    "prov": "http://www.w3.org/ns/prov#",
-    "dcterms": "http://purl.org/dc/terms/",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "skos": "http://www.w3.org/2004/02/skos/core#"
+[
+  {
+    "@id": "https://xko.xpectranet.org/#L0",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Foundational mnemonic spark; novelty and attention trigger."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L0 Origin Insight"
+      }
+    ]
   },
-  "@graph": [
-    {
-      "@id": "xko:Insight",
-      "@type": "owl:Class",
-      "rdfs:label": "Insight",
-      "rdfs:comment": "A symbolic cognitive artefact representing a thought, transformation, or reflection.",
-      "rdfs:subClassOf": [
-        "schema:CreativeWork",
-        "prov:Entity"
-      ]
-    },
-    {
-      "@id": "xko:Agent",
-      "@type": "owl:Class",
-      "rdfs:label": "Agent",
-      "rdfs:comment": "A symbolic actor (human or AI) who participates in memory evolution.",
-      "rdfs:subClassOf": [
-        "foaf:Agent"
-      ]
-    },
-    {
-      "@id": "xko:Layer",
-      "@type": "owl:Class",
-      "rdfs:label": "Layer",
-      "rdfs:comment": "Cognitive memory depth markers (L0\u2013L9) for symbolic classification.",
-      "rdfs:subClassOf": [
-        "skos:Concept"
-      ]
-    },
-    {
-      "@id": "xko:Emotion",
-      "@type": "owl:Class",
-      "rdfs:label": "Emotion",
-      "rdfs:comment": "The symbolic emotional vector guiding remix and validation.",
-      "rdfs:subClassOf": [
-        "skos:Concept"
-      ]
-    },
-    {
-      "@id": "xko:Ritual",
-      "@type": "owl:Class",
-      "rdfs:label": "Ritual",
-      "rdfs:comment": "An intentional act (mint, remix, validate, canonize, archive).",
-      "rdfs:subClassOf": [
-        "schema:Action",
-        "prov:Activity"
-      ]
-    },
-    {
-      "@id": "xko:Circle",
-      "@type": "owl:Class",
-      "rdfs:label": "Circle",
-      "rdfs:comment": "A symbolic community or domain of cognitive governance.",
-      "rdfs:subClassOf": [
-        "schema:Organization"
-      ]
-    },
-    {
-      "@id": "xko:Trail",
-      "@type": "owl:Class",
-      "rdfs:label": "Trail",
-      "rdfs:comment": "A remix lineage connecting insights over time.",
-      "rdfs:subClassOf": [
-        "prov:Collection"
-      ]
-    }
-  ]
-}
+  {
+    "@id": "https://xko.xpectranet.org/#L6",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Circle-based symbolic alignment and memory lock-in."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L6 Convergence"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L8",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Ritual closure and entropy-based forgetting."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L8 Archive"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#hasLayer",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The symbolic cognitive layer (L0–L9) this insight belongs to."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://xko.xpectranet.org/#Insight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hasLayer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://xko.xpectranet.org/#Layer"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L4",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Cross-domain remix and analogical fusion."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L4 Synthesis"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L1",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Witnessing and perceptual filtering; salience mapping."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L1 Observation"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@value": "XpectraNet Protocol"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An ontology for symbolic insight, cognitive memory, and agentic reasoning."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Xpectra Knowledge Ontology"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#Layer",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Temporal-cognitive position of an insight in the XpectraNet stack."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Symbolic Cognitive Layer"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#hasIntent",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The intent or cognitive function expressed."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://xko.xpectranet.org/#Insight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hasIntent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#hasPerspective",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The cognitive stance or interpretive lens through which the insight is expressed. E.g. 'first_person', 'analytical', 'empathic', 'mythic'."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://xko.xpectranet.org/#Insight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hasPerspective"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L3",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Symbolic asymmetry or disruption; conflict and contrast."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L3 Divergence"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#Insight",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A symbolic insight captured in cognitive memory."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Cognitive Memory Block"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#hasEmotion",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The dominant emotion of the insight."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://xko.xpectranet.org/#Insight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hasEmotion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L5",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Emotion-weighted symbolic tension and motivational emergence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L5 Emotional Logic"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L9",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Recursive self-symbolization and narrative encoding."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L9 Mythic"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L2",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Internal feedback and self-model updating."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L2 Reflection"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#hasRole",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The role (e.g. agent, user) that authored this insight."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://xko.xpectranet.org/#Insight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hasRole"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://xko.xpectranet.org/#L7",
+    "@type": [
+      "https://xko.xpectranet.org/#Layer"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Public validation and remixable shared memory."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "L7 Canon"
+      }
+    ]
+  }
+]
